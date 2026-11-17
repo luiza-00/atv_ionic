@@ -1,0 +1,41 @@
+
+<ion-view view-title="Detalhes da Notícia">
+
+    <ion-content class="padding">
+
+        <div class="detalhe-container">
+
+            <div class="list card">
+
+                <div class="item item-image">
+                    <img ng-src="{{noticia.imagem}}">
+                </div>
+
+                <div class="item">
+
+                    <span class="badge badge-positive">
+                        {{noticia.categoria}}
+                    </span>
+
+                    <h2>{{noticia.titulo}}</h2>
+
+                    <p>{{noticia.data}}</p>
+
+                </div>
+
+                <div class="item item-body">
+                    <p>{{noticia.conteudo}}</p>
+                </div>
+
+            </div>
+
+            <button class="button button-positive button-block"
+                ui-sref="home">
+                Voltar às notícias
+            </button>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

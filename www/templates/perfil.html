@@ -1,0 +1,60 @@
+
+<ion-view view-title="Meu Perfil">
+    <ion-content class="padding">
+
+        <div class="perfil-container">
+
+            <h3>Dados do Aluno</h3>
+
+            <div class="list">
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" ng-model="aluno.nome" disabled>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Matrícula</span>
+                    <input type="text" ng-model="aluno.matricula" disabled>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Curso</span>
+                    <input type="text" ng-model="aluno.curso" disabled>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" ng-model="aluno.email">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Telefone</span>
+                    <input type="tel" ng-model="aluno.telefone">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Endereço</span>
+                    <input type="text" ng-model="aluno.endereco">
+                </label>
+
+            </div>
+
+            <p class="balanced text-center" ng-if="mensagem">
+                {{mensagem}}
+            </p>
+
+            <button class="button button-positive button-block"
+                ng-click="salvar()">
+                Salvar alterações
+            </button>
+
+            <button class="button button-stable button-block"
+                ui-sref="home">
+                Voltar
+            </button>
+
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+
+<ion-view view-title="Financeiro">
+    <ion-content class="padding">
+
+        <div class="financeiro-container">
+
+            <h3>Minha situação financeira</h3>
+
+            <label class="item item-input item-select">
+                <div class="input-label">Semestre</div>
+
+                <select ng-model="semestre"
+                    ng-change="alterarSemestre()">
+                    <option value="2026.1">2026.1</option>
+                    <option value="2026.2">2026.2</option>
+                </select>
+            </label>
+
+            <div class="list card" ng-repeat="item in mensalidades">
+
+                <div class="item">
+                    <h2>{{item.mes}}</h2>
+                    <p>Vencimento: {{item.vencimento}}</p>
+                    <p>Valor: R$ {{item.valor | number:2}}</p>
+
+                    <span ng-class="item.pago ? 'status-pago' : 'status-pendente'">
+                        {{item.pago ? 'Pago' : 'Pendente'}}
+                    </span>
+                </div>
+
+                <div class="item" ng-if="!item.pago">
+                    <button class="button button-positive button-block"
+                        ng-click="copiarCodigo(item.codigo)">
+                        Copiar código de barras
+                    </button>
+                </div>
+
+            </div>
+
+            <p class="balanced text-center" ng-if="mensagem">
+                {{mensagem}}
+            </p>
+
+            <button class="button button-stable button-block"
+                ui-sref="home">
+                Voltar
+            </button>
+
+        </div>
+
+    </ion-content>
+</ion-view>

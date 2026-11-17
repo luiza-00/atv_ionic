@@ -1,0 +1,63 @@
+
+<ion-view view-title="Portal do Aluno">
+
+    <ion-content class="padding">
+
+        <div class="home-container">
+
+            <div class="home-header">
+                <h2>Portal do Aluno UCSal</h2>
+                <p>Bem-vindo! Confira as novidades da universidade.</p>
+            </div>
+
+            <div class="home-menu">
+
+                <button class="button button-positive"
+                    ui-sref="perfil">
+                    Meu Perfil
+                </button>
+
+                <button class="button button-positive"
+                    ui-sref="financeiro">
+                    Financeiro
+                </button>
+
+            </div>
+
+            <h3>Notícias e Eventos</h3>
+
+            <div class="list card noticia-card"
+                ng-repeat="item in noticias">
+
+                <div class="item item-image">
+                    <img ng-src="{{item.imagem}}">
+                </div>
+
+                <div class="item">
+
+                    <span class="badge badge-positive">
+                        {{item.categoria}}
+                    </span>
+
+                    <h2>{{item.titulo}}</h2>
+
+                    <p>{{item.data}}</p>
+
+                    <p>{{item.resumo}}</p>
+
+                </div>
+
+                <div class="item">
+                    <button class="button button-positive button-block"
+                        ng-click="abrirNoticia(item.id)">
+                        Ler mais
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

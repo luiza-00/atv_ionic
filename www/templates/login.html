@@ -1,0 +1,38 @@
+
+<ion-view view-title="Portal UCSal">
+    <ion-content class="padding">
+
+        <div class="login-container">
+
+            <div class="text-center">
+                <h2>Portal do Aluno</h2>
+                <p>Universidade Católica do Salvador</p>
+            </div>
+
+            <div class="list">
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Matrícula"
+                        ng-model="usuario.matricula">
+                </label>
+
+                <label class="item item-input">
+                    <input type="password" placeholder="Senha"
+                        ng-model="usuario.senha">
+                </label>
+
+            </div>
+
+            <p class="assertive text-center" ng-if="erro">
+                {{erro}}
+            </p>
+
+            <button class="button button-positive button-block"
+                ng-click="entrar()">
+                Entrar
+            </button>
+
+        </div>
+
+    </ion-content>
+</ion-view>
